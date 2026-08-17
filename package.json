@@ -11,6 +11,7 @@
   "private": true,
   "scripts": {
     "build": "tsc",
+    "prova": "node prova/fronteira.js",
     "prepare": "tsc"
   },
   "license": "UNLICENSED",
