@@ -1,0 +1,15 @@
+# O que este arquivo impede, e por que ele existe:
+#
+# O git converte finais de linha na gravacao e no checkout (autocrlf). Isso faz o
+# MESMO commit produzir bytes DIFERENTES em maquinas diferentes — e este pacote e
+# consumido sob um criterio de auditoria por sha256. Sem esta trava, a conferencia
+# de integridade acusaria divergencia num clone limpo, sem nada ter mudado, e um
+# alarme que dispara sozinho vira alarme que se ignora.
+#
+# Foi assim que apareceu: na v1.0.0, `safe-executor.ts` (LF) voltou do GitHub em
+# CRLF e o sha256 divergiu. Os outros dois bateram por coincidencia — ja eram CRLF
+# dos dois lados. O criterio estava fragil e so um dos tres denunciou.
+#
+# `-text` desliga toda conversao: o que e commitado e exatamente o que e obtido,
+# em qualquer maquina. Os tres arquivos foram canonizados em LF na v1.0.1.
+* -text
