@@ -1,0 +1,20 @@
+{
+  "name": "@axon/contrato",
+  "version": "1.0.0",
+  "description": "A fronteira motor <-> Axon: a interface Tool, o registro e o SafeExecutor.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "prepare": "tsc"
+  },
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "typescript": "^6.0.3"
+  }
+}
